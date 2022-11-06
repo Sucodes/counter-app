@@ -1,0 +1,106 @@
+@import '../../styles/variable.scss';
+
+.counter {
+    height: 95vh;
+    @include flexCenter(column);
+    justify-content: space-evenly;
+
+    &_card {
+        padding: 0 20px;
+        border-radius: 4px;
+        border: 1px solid $textColor;
+        @include flexCenter(column);
+        justify-content: space-evenly;
+        width: 80vw;
+        height: 60vh;
+
+        &__value {
+            width: inherit;
+            @include flexCenter(column);
+            justify-content: space-between;
+            height: 20%;
+
+            h3 {
+                font-weight: 400;
+            }
+
+            p {
+                font-weight: 900;
+                font-size: $fontSizeMd;
+            }
+        }
+
+        &__btn {
+            @include flexCenter(column);
+            justify-content: space-around;
+            width: inherit;
+            height: 50%;
+            font-weight: 900;
+            font-size: $fontSizeMd;
+
+            &__1 {
+                width: 100%;
+                @include flexCenter(row);
+                justify-content: space-around;
+
+                div {
+                    width: $fontSizeMd;
+                    @include btnStyling;
+                }
+            }
+
+            &__2 {
+                width: 100%;
+                @include flexCenter(column);
+                justify-content: space-around;
+                font-size: $fontSizeSm;
+                font-weight: 400;              
+
+                &_reset {
+                    margin-top: 15px;
+                    width: 25%;
+                    @include btnStyling;
+                }
+
+                &_input {
+                    margin-top: 20px;
+                    width: 25%;
+                    
+                    input {
+                        @include btnStyling;
+                        width: 100%;
+                        text-align: center;
+
+                        &::placeholder {
+                            color: $textColor;
+
+                            &:hover {
+                                color: $backgroundColor;
+                            }
+                        }
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/****************** Media queries *************************/
+
+@media(min-width: $md) {
+    .counter {
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        &_card {
+            width: 60vw;
+            height: 60vh;
+        }
+    }
+}

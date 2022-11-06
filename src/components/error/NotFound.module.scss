@@ -1,0 +1,25 @@
+@import '../../styles/variable.scss';
+
+.error {
+    @include flexCenter(column);
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 40vh;
+    
+    h1 {
+        font-size: 2em;
+    }
+
+    a {
+        border: 1px solid $textColor;
+        border-radius: 8px;
+        padding: 10px;
+        text-decoration: none;
+        color: $textColor;
+
+        &:hover {
+            background-color: black;
+            color: $backgroundColor;
+        }
+    }
+}

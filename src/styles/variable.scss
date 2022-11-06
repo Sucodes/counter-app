@@ -1,0 +1,36 @@
+/************** Colors *******************/
+
+$textColor: black;
+$backgroundColor: white;
+
+/************** Font sizes *******************/
+
+$fontSizeSm: 1rem;
+$fontSizeMd: 2em;
+
+/************** Media queries *******************/
+
+$md: 768px;
+$lg: 1024px;
+
+/************** Mixins ***************************/
+
+@mixin flexCenter($direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin btnStyling {
+    border: 1px solid $textColor;
+    border-radius: 4px;
+    padding: 15px;
+    @include flexCenter(row);
+    cursor: pointer;
+
+    &:hover {
+        background-color: $textColor;
+        color: $backgroundColor;
+    }
+}
