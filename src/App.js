@@ -1,15 +1,18 @@
 import { Routes, Route } from "react-router-dom";
 import Counter from "./components/counter/Counter";
 import NotFound from "./components/error/NotFound";
+import CounterContext from "./hooks/CounterContext";
 
 function App() {
   return (
-      <div className="container">
+    <main className="container">
+      <CounterContext>
         <Routes>
           <Route path="/" element={<Counter />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
-      </div>
+      </CounterContext>
+    </main>
   );
 }
 
